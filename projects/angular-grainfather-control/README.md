@@ -5,6 +5,8 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 It can be used to control the GrainFather controller via BLE from within a browser.
 The BLE specification is taken from https://github.com/kingpulsar/Grainfather-Bluetooth-Protocol.
 
+It depends on the https://www.npmjs.com/package/@types/web-bluetooth package for type definitions.
+
 The main module exposes an API to connect/reconnect/disconnect from the controller. It also has a send method, which takes a Command from the commands files.
 
 All commands are available as a class, with the Recipe command being the most complex one.
