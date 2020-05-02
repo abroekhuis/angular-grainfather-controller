@@ -11,21 +11,8 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import {GrainfatherControlModule} from '../../projects/angular-grainfather-control/src/lib/angular-grainfather-control.module';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    GrainfatherControlModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+export * from './lib/angular-grainfather-control.module';
+export * from './lib/gf.ble.commands';
+export * from './lib/gf.ble.notifications';
+export * from './lib/brewfather.helper';

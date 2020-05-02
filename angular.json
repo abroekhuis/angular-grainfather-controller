@@ -119,6 +119,46 @@
           }
         }
       }
+    },
+    "angular-grainfather-control": {
+      "projectType": "library",
+      "root": "projects/angular-grainfather-control",
+      "sourceRoot": "projects/angular-grainfather-control/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-grainfather-control/tsconfig.lib.json",
+            "project": "projects/angular-grainfather-control/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-grainfather-control/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-grainfather-control/src/test.ts",
+            "tsConfig": "projects/angular-grainfather-control/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-grainfather-control/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-grainfather-control/tsconfig.lib.json",
+              "projects/angular-grainfather-control/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "gf-ble"
 }

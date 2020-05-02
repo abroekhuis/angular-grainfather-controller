@@ -1,15 +1,11 @@
-# Angular Grainfather Control
-
-This project contains an example and the grainfather control library. 
-The example expects BrewFather batch files to be able to send a recipe to the controller.
+# AngularGrainfatherControl
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 It can be used to control the GrainFather controller via BLE from within a browser.
 The BLE specification is taken from https://github.com/kingpulsar/Grainfather-Bluetooth-Protocol.
 
-The main module exposes an API to connect/reconnect/disconnect from the controller. 
-It also has a send method, which takes a Command from the commands files.
+The main module exposes an API to connect/reconnect/disconnect from the controller. It also has a send method, which takes a Command from the commands files.
 
 All commands are available as a class, with the Recipe command being the most complex one.
 RecipeDetails contain the minimal information that is needed to create a recipe. 
