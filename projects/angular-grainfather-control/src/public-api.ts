@@ -13,6 +13,6 @@
 // limitations under the License.
 
 export * from './lib/angular-grainfather-control.module';
-export * from './lib/gf.ble.commands';
-export * from './lib/gf.ble.notifications';
+export * from './lib/grainfather.commands';
+export * from './lib/grainfather.notifications';
 export * from './lib/brewfather.helper';

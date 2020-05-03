@@ -15,56 +15,9 @@ import {Component} from '@angular/core';
 import {GrainfatherControlModule} from '../../projects/angular-grainfather-control/src/lib/angular-grainfather-control.module';
 import {
   BrewSession,
-  CStatus,
-  FStatus,
-  IStatus,
-  TStatus,
-  VStatus,
-  WStatus,
-  XStatus,
-  YStatus,
-  Voltage,
-  Units,
-  SessionState,
-  DismissBoilAdditionAlert,
-  CancelTimer,
-  DecrementTargetTemperature,
-  FinishSession,
-  PauseOrResumeTimer,
-  ToggleHeat,
-  InteractionComplete,
-  TurnOffHeat,
-  TurnOnHeat,
-  TurnOffPump,
-  TurnOnPump,
-  GetCurrentBoilTemperature,
-  TogglePump,
-  DisconnectManualMode,
-  DisconnectAndCancel,
-  DisconnectAutoMode,
-  PressSet,
-  IncrementTargetTemperature,
-  DisableSpargeWaterAlert,
-  GetFirmwareVersion,
-  ResetController,
-  ResetRecipeInterrupted,
-  TurnOffSpargeCounterMode,
-  TurnOnSpargeCounterMode,
-  TurnOffBoilControlMode,
-  TurnOnBoilControlMode,
-  ExitManualPowerControlMode,
-  EnterManualPowerControlMode,
-  GetControllerVoltageAndUnits,
-  TurnOffSpargeAlertMode,
-  TurnOnSpargeAlertMode,
-  SetDelayedHeatFunction,
-  SetLocalBoilTemperature,
-  SetBoilTime,
-  SkipToStep,
-  SetNewTimer,
-  SetNewTimerWithSeconds,
-  SetTargetTemperature,
-  EditStageTemperatureAndTime, SetSpargeProgress, Recipe, SkipToInteraction, CustomCommand, RecipeDetails, MashStep, BoilStep
+  CStatus, FStatus, IStatus, TStatus, VStatus,
+  WStatus, XStatus, YStatus, Voltage, Units,
+  SessionState, GrainFatherCommands
 } from 'angular-grainfather-control';
 import {BrewFatherHelper} from '../../projects/angular-grainfather-control/src/lib/brewfather.helper';
 
@@ -182,174 +135,174 @@ export class AppComponent {
   }
 
   async dismissBoilAdditionAlert() {
-    await this.gfBle.sendCommand(new DismissBoilAdditionAlert());
+    await this.gfBle.sendCommand(GrainFatherCommands.createDismissBoilAdditionAlert());
   }
 
   async cancelTimer() {
-    await this.gfBle.sendCommand(new CancelTimer());
+    await this.gfBle.sendCommand(GrainFatherCommands.createCancelTimer());
   }
 
   async decrementTargetTemperature() {
-    await this.gfBle.sendCommand(new DecrementTargetTemperature());
+    await this.gfBle.sendCommand(GrainFatherCommands.createDecrementTargetTemperature());
   }
 
   async finishSession() {
-    await this.gfBle.sendCommand(new FinishSession());
+    await this.gfBle.sendCommand(GrainFatherCommands.createFinishSession());
   }
 
   async pauseOrResumeTimer() {
-    await this.gfBle.sendCommand(new PauseOrResumeTimer());
+    await this.gfBle.sendCommand(GrainFatherCommands.createPauseOrResumeTimer());
   }
 
   async toggleHeat() {
-    await this.gfBle.sendCommand(new ToggleHeat());
+    await this.gfBle.sendCommand(GrainFatherCommands.createToggleHeat());
   }
 
   async interactionComplete() {
-    await this.gfBle.sendCommand(new InteractionComplete());
+    await this.gfBle.sendCommand(GrainFatherCommands.createInteractionComplete());
   }
 
   async turnOffHeat() {
-    await this.gfBle.sendCommand(new TurnOffHeat());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOffHeat());
   }
 
   async turnOnHeat() {
-    await this.gfBle.sendCommand(new TurnOnHeat());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOnHeat());
   }
 
   async turnOffPump() {
-    await this.gfBle.sendCommand(new TurnOffPump());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOffPump());
   }
 
   async turnOnPump() {
-    await this.gfBle.sendCommand(new TurnOnPump());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOnPump());
   }
 
   async getCurrentBoilTemperature() {
-    await this.gfBle.sendCommand(new GetCurrentBoilTemperature());
+    await this.gfBle.sendCommand(GrainFatherCommands.createGetCurrentBoilTemperature());
   }
 
   async togglePump() {
-    await this.gfBle.sendCommand(new TogglePump());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTogglePump());
   }
 
   async disconnectManualMode() {
-    await this.gfBle.sendCommand(new DisconnectManualMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createDisconnectManualMode());
   }
 
   async disconnectAndCancel() {
-    await this.gfBle.sendCommand(new DisconnectAndCancel());
+    await this.gfBle.sendCommand(GrainFatherCommands.createDisconnectAndCancel());
   }
 
   async disconnectAutoMode() {
-    await this.gfBle.sendCommand(new DisconnectAutoMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createDisconnectAutoMode());
   }
 
   async pressSet() {
-    await this.gfBle.sendCommand(new PressSet());
+    await this.gfBle.sendCommand(GrainFatherCommands.createPressSet());
   }
 
   async incrementTargetTemperature() {
-    await this.gfBle.sendCommand(new IncrementTargetTemperature());
+    await this.gfBle.sendCommand(GrainFatherCommands.createIncrementTargetTemperature());
   }
 
   async disableSpargeWaterAlert() {
-    await this.gfBle.sendCommand(new DisableSpargeWaterAlert());
+    await this.gfBle.sendCommand(GrainFatherCommands.createDisableSpargeWaterAlert());
   }
 
   async getFirmwareVersion() {
-    await this.gfBle.sendCommand(new GetFirmwareVersion());
+    await this.gfBle.sendCommand(GrainFatherCommands.createGetFirmwareVersion());
   }
 
   async resetController() {
-    await this.gfBle.sendCommand(new ResetController());
+    await this.gfBle.sendCommand(GrainFatherCommands.createResetController());
   }
 
   async resetRecipeInterrupted() {
-    await this.gfBle.sendCommand(new ResetRecipeInterrupted());
+    await this.gfBle.sendCommand(GrainFatherCommands.createResetRecipeInterrupted());
   }
 
   async turnOffSpargeCounterMode() {
-    await this.gfBle.sendCommand(new TurnOffSpargeCounterMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOffSpargeCounterMode());
   }
 
   async turnOnSpargeCounterMode() {
-    await this.gfBle.sendCommand(new TurnOnSpargeCounterMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOnSpargeCounterMode());
   }
 
   async turnOffBoilControlMode() {
-    await this.gfBle.sendCommand(new TurnOffBoilControlMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOffBoilControlMode());
   }
 
   async turnOnBoilControlMode() {
-    await this.gfBle.sendCommand(new TurnOnBoilControlMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOnBoilControlMode());
   }
 
   async exitManualPowerControlMode() {
-    await this.gfBle.sendCommand(new ExitManualPowerControlMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createExitManualPowerControlMode());
   }
 
   async enterManualPowerControlMode() {
-    await this.gfBle.sendCommand(new EnterManualPowerControlMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createEnterManualPowerControlMode());
   }
 
   async getControllerVoltageAndUnits() {
-    await this.gfBle.sendCommand(new GetControllerVoltageAndUnits());
+    await this.gfBle.sendCommand(GrainFatherCommands.createGetControllerVoltageAndUnits());
   }
 
   async turnOffSpargeAlertMode() {
-    await this.gfBle.sendCommand(new TurnOffSpargeAlertMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOffSpargeAlertMode());
   }
 
   async turnOnSpargeAlertMode() {
-    await this.gfBle.sendCommand(new TurnOnSpargeAlertMode());
+    await this.gfBle.sendCommand(GrainFatherCommands.createTurnOnSpargeAlertMode());
   }
 
   async setDelayedHeatFunction(minutes: number, seconds: number) {
-    await this.gfBle.sendCommand(new SetDelayedHeatFunction(minutes, seconds));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetDelayedHeatFunction(minutes, seconds));
   }
 
   async setLocalBoilTemperature(temperature: number) {
-    await this.gfBle.sendCommand(new SetLocalBoilTemperature(temperature));
-    await this.gfBle.sendCommand(new GetCurrentBoilTemperature());
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetLocalBoilTemperature(temperature));
+    await this.gfBle.sendCommand(GrainFatherCommands.createGetCurrentBoilTemperature());
   }
 
   async setBoilTime(time: number) {
-    await this.gfBle.sendCommand(new SetBoilTime(time));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetBoilTime(time));
   }
 
   async skipToStep(step: number, timeEditable: boolean, minutesLeft: number, secondsLeft: number,
                    skipRamp: boolean, disableAddGrain: boolean) {
-    await this.gfBle.sendCommand(new SkipToStep(step, timeEditable, minutesLeft, secondsLeft,
+    await this.gfBle.sendCommand(GrainFatherCommands.createSkipToStep(step, timeEditable, minutesLeft, secondsLeft,
       skipRamp, disableAddGrain));
   }
 
   async setNewTimer(minutes: number) {
-    await this.gfBle.sendCommand(new SetNewTimer(minutes));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetNewTimer(minutes));
   }
 
   async setNewTimerWithSeconds(minutes: number, seconds: number) {
-    await this.gfBle.sendCommand(new SetNewTimerWithSeconds(minutes, seconds));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetNewTimerWithSeconds(minutes, seconds));
   }
 
   async setTargetTemperature(temperature: number) {
-    await this.gfBle.sendCommand(new SetTargetTemperature(temperature));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetTargetTemperature(temperature));
   }
 
   async editStageTemperatureAndTime(stage: number, time: number, temperature: number) {
-    await this.gfBle.sendCommand(new EditStageTemperatureAndTime(stage, time, temperature));
+    await this.gfBle.sendCommand(GrainFatherCommands.createEditStageTemperatureAndTime(stage, time, temperature));
   }
 
   async setSpargeProgress(progress: number) {
-    await this.gfBle.sendCommand(new SetSpargeProgress(progress));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSetSpargeProgress(progress));
   }
 
   async skipToInteraction(interaction: number) {
-    await this.gfBle.sendCommand(new SkipToInteraction(interaction));
+    await this.gfBle.sendCommand(GrainFatherCommands.createSkipToInteraction(interaction));
   }
 
   async sendCustomCommand(command: string) {
-    await this.gfBle.sendCommand(new CustomCommand(command));
+    await this.gfBle.sendCommand(GrainFatherCommands.createCustomCommand(command));
   }
 
   /**
@@ -366,8 +319,8 @@ export class AppComponent {
    * @param brewFatherBatch batch file with recipe
    */
   async sendRecipe(brewFatherBatch: string, delayMinutes: number = 0, delaySeconds: number = 0) {
-    const recipeDetails = BrewFatherHelper.createRecipeDetails(brewFatherBatch, delayMinutes, delaySeconds);
-    const recipe = new Recipe(recipeDetails);
+    const recipeDetails = BrewFatherHelper.createRecipeDetails(brewFatherBatch);
+    const recipe = GrainFatherCommands.createRecipe(recipeDetails, delayMinutes, delaySeconds);
 
     this.gfBle.setRecipeDetails(recipeDetails);
     await this.gfBle.sendCommand(recipe);

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 import {EventEmitter, Output} from '@angular/core';
-import {PressSet, RecipeDetails} from './gf.ble.commands';
+import {GrainFatherCommands, RecipeDetails} from './grainfather.commands';
 
 /**
  * Handler for notifications. Besides processing all incoming notifications, also the state of the controller is kept and updated.
@@ -20,7 +20,7 @@ import {PressSet, RecipeDetails} from './gf.ble.commands';
  *
  * Publishes events for the controller status as well as for each notification.
  */
-export class GfBleNotifications {
+export class GrainFatherNotifications {
 
   @Output()
   sessionStatus: EventEmitter<BrewSession> = new EventEmitter<BrewSession>();
@@ -44,7 +44,7 @@ export class GfBleNotifications {
     switch (type) {
       case 'A':
         // Discard notice on display
-        this.commandEmitter.emit(new PressSet());
+        this.commandEmitter.emit(GrainFatherCommands.createPressSet());
         break;
 
       case 'C':
@@ -179,7 +179,7 @@ export class GfBleNotifications {
           if (interactionCode === InteractionCode.StartSparge) {
             sessionStatus.state = SessionState.StartSparge;
             // Skip this stage and go to next
-            this.commandEmitter.emit(new PressSet());
+            this.commandEmitter.emit(GrainFatherCommands.createPressSet());
           } else if (interactionCode === InteractionCode.FinishSparge) {
             sessionStatus.state = SessionState.FinishSparge;
           }
@@ -191,7 +191,7 @@ export class GfBleNotifications {
             // Use actual temp and boil temp to determine if we are there
             // then emit press command to get to StartBoil
             if (this.currentTemperature >= this.boilTemperature) {
-              this.commandEmitter.emit(new PressSet());
+              this.commandEmitter.emit(GrainFatherCommands.createPressSet());
             }
           } else {
             sessionStatus.state = SessionState.Boil;
@@ -200,7 +200,7 @@ export class GfBleNotifications {
             sessionStatus.timerSecondsLeft = this.timer.timerSecondsLeft;
             // If boil is done, we need to move the controller to the next stage
             if (this.timer.timerMinutesLeft === 0) {
-              this.commandEmitter.emit(new PressSet());
+              this.commandEmitter.emit(GrainFatherCommands.createPressSet());
             }
 
             this.recipeDetails.boilSteps.forEach(step => {
@@ -321,6 +321,9 @@ export class VStatus {
   }
 }
 
+/**
+ * Class containing the details of the W notification.
+ */
 export class WStatus {
   heatPowerOutputPercentage: number;
   isTimerPaused: boolean;
@@ -329,6 +332,18 @@ export class WStatus {
   manualPowerMode: boolean;
   spargeWaterAlertDisplayed: boolean;
 
+  /**
+   * Creates a new instance of the W notification.
+   *
+   * Notification: ```W{heatPowerOutputPercentage},{isTimerPaused},{stepMashMode},{isRecipeInterrupted},{manualPowerMode},{spargeWaterAlertDisplayed}```
+   *
+   * @param heatPowerOutputPercentage heating output
+   * @param isTimerPaused if true, the timer is paused
+   * @param stepMashMode if true, step mash is enabled??
+   * @param isRecipeInterrupted if true, the previous running recipe was interrupted, eg due to power loss
+   * @param manualPowerMode if true, manual power mode is enabled
+   * @param spargeWaterAlertDisplayed if true, the sparge water heating alert is shown
+   */
   constructor(heatPowerOutputPercentage: number, isTimerPaused: boolean, stepMashMode: boolean,
               isRecipeInterrupted: boolean, manualPowerMode: boolean, spargeWaterAlertDisplayed: boolean) {
     this.heatPowerOutputPercentage = heatPowerOutputPercentage;
@@ -340,26 +355,75 @@ export class WStatus {
   }
 }
 
+/**
+ * Class containing the details of the X notification.
+ */
 export class XStatus {
   targetTemperature: number;
   currentTemperature: number;
 
+  /**
+   * Creates a new instance of the X notification.
+   *
+   * Notification: ```X{targetTemperature},{currentTemperature}```
+   *
+   * @param targetTemperature target temperature currently set
+   * @param currentTemperature current temperature
+   */
   constructor(targetTemperature: number, currentTemperature: number) {
     this.targetTemperature = targetTemperature;
     this.currentTemperature = currentTemperature;
   }
 }
 
+/**
+ * List of interaction codes send in the Y notification by the controller.
+ *
+ * @readonly
+ * @enum {number}
+ */
 export enum InteractionCode {
+  /**
+   * Interaction code send by the controller if a new recipe is receiver.
+   * Only send if there is no delayed heating timer used.
+   * Waits for user acknowledgement.
+   */
   StartBrew = 1,
+  /**
+   * Warns the user to add the grains if the mash-in temperature is reached.
+   * Waits for user acknowledgement.
+   */
   AddGrain,
+  /**
+   * Warns the user that sparging can being.
+   * Is skipped automatically, so that the controller goes to the FinishSparge interaction.
+   */
   StartSparge,
+  /**
+   * If enabled, shows the sparge counter, if not, shows an alert to continue to the boil stage.
+   * Waits for user acknowledgement.
+   */
   FinishSparge,
+  /**
+   * Shows an alert to start the boil timer. During this stage, the boil additions will also be shown.
+   * Waits for user acknowledgement.
+   */
   StartBoil,
+  /**
+   * If a hop stand is added to the recipe, an alert is shown to start the hop stand timer.
+   * Waits for user acknowledgement.
+   */
   StartHopStand,
+  /**
+   * If the boil timer ends, an alert to finish the session is shown.
+   * Waits for user acknowledgement.
+   */
   FinishBrew
 }
 
+/**
+ * Class containing the details of the Y notification.
+ */
 export class YStatus {
   heatPower: boolean;
   pumpStatus: boolean;
@@ -370,6 +434,20 @@ export class YStatus {
   stageNumber: number;
   delayedHeatMode: boolean;
 
+  /**
+   * Creates a new instance of the Y notification.
+   *
+   * Notification: ```Y{heatPower},{pumpStatus},{autoModeStatus},{stageRampStatus},{interactionModeStatus},{interactionCode},{stageNumber},{delayedHeatMode}```
+   *
+   * @param heatPower heating power output.
+   * @param pumpStatus pump status.
+   * @param autoModeStatus if true the controller is running an automated session.
+   * @param stageRampStatus if true, the controller is ramping to the new/next target temperature.
+   * @param interactionModeStatus if true, the controller is waiting for user interaction.
+   * @param interactionCode code indication the controller step.
+   * @param stageNumber stage number the controller currently is at.
+   * @param delayedHeatMode if true, the controller is running the delayed heating timer.
+   */
   constructor(heatPower: boolean, pumpStatus: boolean, autoModeStatus: boolean, stageRampStatus: boolean,
               interactionModeStatus: boolean, interactionCode: InteractionCode, stageNumber: number, delayedHeatMode: boolean) {
     this.heatPower = heatPower;

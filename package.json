@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "npx compodoc -p projects/angular-grainfather-control/tsconfig.lib.json"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +20,6 @@
     "@angular/platform-browser": "~9.1.3",
     "@angular/platform-browser-dynamic": "~9.1.3",
     "@angular/router": "~9.1.3",
-    "@manekinekko/angular-web-bluetooth": "7.0.0",
     "@types/web-bluetooth": "0.0.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
@@ -31,9 +31,10 @@
     "@angular/cli": "~9.1.3",
     "@angular/compiler-cli": "~9.1.3",
     "@angular/language-service": "~9.1.3",
-    "@types/node": "^12.11.1",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",

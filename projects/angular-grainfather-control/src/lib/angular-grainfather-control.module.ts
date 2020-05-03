@@ -15,8 +15,8 @@
 import { NgModule } from '@angular/core';
 import {BluetoothDevice, BluetoothRemoteGATTCharacteristic, BluetoothRemoteGATTServer, RequestDeviceOptions} from 'web-bluetooth';
 import {interval} from 'rxjs';
-import {GfBleNotifications} from './gf.ble.notifications';
-import {GetCurrentBoilTemperature, GfBleCommand, RecipeDetails} from './gf.ble.commands';
+import {GrainFatherNotifications} from './grainfather.notifications';
+import {GrainFatherCommands, RecipeDetails} from './grainfather.commands';
 
 /**
  * BLE controller. Takes care of setting up a Ble connection by asking the user for a device to connect to.
@@ -37,7 +37,7 @@ export class GrainfatherControlModule {
   server: BluetoothRemoteGATTServer;
   writer: BluetoothRemoteGATTCharacteristic;
 
-  notificationHandler: GfBleNotifications = new GfBleNotifications();
+  notificationHandler: GrainFatherNotifications = new GrainFatherNotifications();
 
   connected = false;
 
@@ -84,7 +84,7 @@ export class GrainfatherControlModule {
       ]);
     }).then(_ => {
       self.connected = true;
-      return self.sendCommand(new GetCurrentBoilTemperature());
+      return self.sendCommand(GrainFatherCommands.createGetCurrentBoilTemperature());
     }).then(_ => {
       self.notificationHandler.commandEmitter.subscribe(command => {
         return self.sendCommand(command);
@@ -126,7 +126,7 @@ export class GrainfatherControlModule {
    *
    * @param gfBleCommand the command to send.
    */
-  async sendCommand(gfBleCommand: GfBleCommand) {
+  async sendCommand(gfBleCommand: GrainFatherCommands) {
     const commands = gfBleCommand.encode();
     for (const command of commands) {
       await this.writer.writeValue(command);

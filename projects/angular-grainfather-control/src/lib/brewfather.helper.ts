@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {BoilStep, MashStep, RecipeDetails} from './gf.ble.commands';
+import {BoilStep, MashStep, RecipeDetails} from './grainfather.commands';
 
 export class BrewFatherHelper {
 
-  static createRecipeDetails(brewFatherBatchStr: string, delayMinutes: number = 0, delaySeconds: number = 0) {
+  static createRecipeDetails(brewFatherBatchStr: string) {
     const brewFatherBatch = JSON.parse(brewFatherBatchStr);
 
     const recipeDetails: RecipeDetails = {
@@ -27,8 +27,6 @@ export class BrewFatherHelper {
       hopStandTime:  brewFatherBatch.recipe.hopStandMinutes.toString(),
       boilSteps: [],
       mashSteps: [],
-      delayMinutes,
-      delaySeconds
     };
 
     brewFatherBatch.recipe.mash.steps.forEach(value => {

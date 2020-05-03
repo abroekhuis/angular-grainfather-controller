@@ -1,0 +1,3664 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gf-ble documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">gf-ble documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>GrainFatherCommands</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/angular-grainfather-control/src/lib/grainfather.commands.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Describes a command that can be sent to the controller.
+Contains static methods to create a specific command.</p>
+<p>Commands are sent in plain textAll and should be exactly 19 characters in length. The end is padded with spaces.</p>
+<p>A command consists out of 1 or more lines.</p>
+
+            </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#commands">commands</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#append">append</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createCancelTimer">createCancelTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDecrementTargetTemperature">createDecrementTargetTemperature</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDisableSpargeWaterAlert">createDisableSpargeWaterAlert</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDisconnectAndCancel">createDisconnectAndCancel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDisconnectAutoMode">createDisconnectAutoMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDisconnectManualMode">createDisconnectManualMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDismissBoilAdditionAlert">createDismissBoilAdditionAlert</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createEditStageTemperatureAndTime">createEditStageTemperatureAndTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createEnterManualPowerControlMode">createEnterManualPowerControlMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createExitManualPowerControlMode">createExitManualPowerControlMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createFinishSession">createFinishSession</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createGetControllerVoltageAndUnits">createGetControllerVoltageAndUnits</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createGetCurrentBoilTemperature">createGetCurrentBoilTemperature</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createGetFirmwareVersion">createGetFirmwareVersion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createIncrementTargetTemperature">createIncrementTargetTemperature</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createInteractionComplete">createInteractionComplete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createPauseOrResumeTimer">createPauseOrResumeTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createPressSet">createPressSet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createRecipe">createRecipe</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createResetController">createResetController</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createResetRecipeInterrupted">createResetRecipeInterrupted</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetBoilTime">createSetBoilTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetDelayedHeatFunction">createSetDelayedHeatFunction</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetLocalBoilTemperature">createSetLocalBoilTemperature</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetNewTimer">createSetNewTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetNewTimerWithSeconds">createSetNewTimerWithSeconds</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetSpargeProgress">createSetSpargeProgress</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSetTargetTemperature">createSetTargetTemperature</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSkipToInteraction">createSkipToInteraction</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createSkipToStep">createSkipToStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createToggleHeat">createToggleHeat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTogglePump">createTogglePump</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOffBoilControlMode">createTurnOffBoilControlMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOffHeat">createTurnOffHeat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOffPump">createTurnOffPump</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOffSpargeAlertMode">createTurnOffSpargeAlertMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOffSpargeCounterMode">createTurnOffSpargeCounterMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOnBoilControlMode">createTurnOnBoilControlMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOnHeat">createTurnOnHeat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOnPump">createTurnOnPump</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOnSpargeAlertMode">createTurnOnSpargeAlertMode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createTurnOnSpargeCounterMode">createTurnOnSpargeCounterMode</a>
+                            </li>
+                            <li>
+                                <a href="#encode">encode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(...commands: string[])</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates a new command.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>commands</td>
+                                                  
+                                                        <td>
+                                                                    <code>string[]</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>each argument is treated as a single line (command).</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commands"></a>
+                        <span class="name">
+                            <b>
+                            commands</b>
+                            <a href="#commands"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="append"></a>
+                    <span class="name">
+                        <b>
+                            append
+                        </b>
+                        <a href="#append"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>append(command: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="527"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:527</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Appends a new command to the end of the list.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>command</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>command to add</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createCancelTimer"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createCancelTimer
+                        </b>
+                        <a href="#createCancelTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createCancelTimer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to cancel the running timer.</p>
+<p>Command: <code>C</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDecrementTargetTemperature"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDecrementTargetTemperature
+                        </b>
+                        <a href="#createDecrementTargetTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDecrementTargetTemperature()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to decrement the target temperature.</p>
+<p>Command: <code>D</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDisableSpargeWaterAlert"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDisableSpargeWaterAlert
+                        </b>
+                        <a href="#createDisableSpargeWaterAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDisableSpargeWaterAlert()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="224"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:224</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to disable tthe sparge water alert.</p>
+<p>Command: <code>V</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDisconnectAndCancel"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDisconnectAndCancel
+                        </b>
+                        <a href="#createDisconnectAndCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDisconnectAndCancel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="188"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:188</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to disconnect and cancel.</p>
+<p>Command: <code>Q1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDisconnectAutoMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDisconnectAutoMode
+                        </b>
+                        <a href="#createDisconnectAutoMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDisconnectAutoMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:197</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to disconnect the auto mode.</p>
+<p>Command: <code>Q2</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDisconnectManualMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDisconnectManualMode
+                        </b>
+                        <a href="#createDisconnectManualMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDisconnectManualMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to disconnect the manual mode.</p>
+<p>Command: <code>Q0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDismissBoilAdditionAlert"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDismissBoilAdditionAlert
+                        </b>
+                        <a href="#createDismissBoilAdditionAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDismissBoilAdditionAlert()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to dismiss the boil addition alert.</p>
+<p>Command: <code>A</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createEditStageTemperatureAndTime"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createEditStageTemperatureAndTime
+                        </b>
+                        <a href="#createEditStageTemperatureAndTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createEditStageTemperatureAndTime(stage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, temperature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="445"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:445</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to edit stage temperature and time.</p>
+<p>Command: <code>a${stage},${time},${temperature},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the stage to edit</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>time</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new time in minutes</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>temperature</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new temperature</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createEnterManualPowerControlMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createEnterManualPowerControlMode
+                        </b>
+                        <a href="#createEnterManualPowerControlMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createEnterManualPowerControlMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="305"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:305</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to enter manual power control.</p>
+<p>Command: <code>f1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createExitManualPowerControlMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createExitManualPowerControlMode
+                        </b>
+                        <a href="#createExitManualPowerControlMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createExitManualPowerControlMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="296"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:296</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to exit manual power control.</p>
+<p>Command: <code>f0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createFinishSession"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createFinishSession
+                        </b>
+                        <a href="#createFinishSession"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createFinishSession()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to finish the session.</p>
+<p>Command: <code>F</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGetControllerVoltageAndUnits"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createGetControllerVoltageAndUnits
+                        </b>
+                        <a href="#createGetControllerVoltageAndUnits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGetControllerVoltageAndUnits()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="314"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:314</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to get the controller voltage and used units.</p>
+<p>Command: <code>g</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGetCurrentBoilTemperature"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createGetCurrentBoilTemperature
+                        </b>
+                        <a href="#createGetCurrentBoilTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGetCurrentBoilTemperature()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to get the current boil temperature.</p>
+<p>Command: <code>M</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGetFirmwareVersion"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createGetFirmwareVersion
+                        </b>
+                        <a href="#createGetFirmwareVersion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGetFirmwareVersion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="233"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:233</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to get the firmware version.</p>
+<p>Command: <code>X</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createIncrementTargetTemperature"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createIncrementTargetTemperature
+                        </b>
+                        <a href="#createIncrementTargetTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createIncrementTargetTemperature()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to increment the target temperature.</p>
+<p>Command: <code>U</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createInteractionComplete"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createInteractionComplete
+                        </b>
+                        <a href="#createInteractionComplete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createInteractionComplete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to indicate interaction is complete.</p>
+<p>Command: <code>I</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPauseOrResumeTimer"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createPauseOrResumeTimer
+                        </b>
+                        <a href="#createPauseOrResumeTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPauseOrResumeTimer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to pause or resume the current timer.</p>
+<p>Command: <code>G</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPressSet"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createPressSet
+                        </b>
+                        <a href="#createPressSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPressSet()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="206"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:206</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to press the set button.</p>
+<p>Command: <code>T</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createRecipe"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createRecipe
+                        </b>
+                        <a href="#createRecipe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createRecipe(recipeDetails: <a href="../classes/RecipeDetails.html">RecipeDetails</a>, delayMinutes: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, delaySeconds: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, showWaterTreatmentAlarm, showSpargeCounter, showSpargeAlert, skipStart, boilPowerMode, strikeTempMode)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="499"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:499</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Create the recipe command. From all of the commands, this is the most complex one, and needs more details.
+A recipe consists out of multiple lines and looks as:
+  R75,2,15.7,16.7,  75 minute boil, 2 mash steps, 15.6L mash volume, 16.7L sparge volume
+  0,1,1,0,0,        No water treatment alert, show sparge counter, show sparge alert, no delayed session, do not skip the start
+  SAISON            Recipe name that will be displayed in the top left
+  0,4,0,0,          No hop stand, 4 boil addition stops, no boil power mode, no strike temp mode
+  75,               Boil addition stop 1, at 75 minutes boil time remaining
+  45,               Boil addition stop 2, at 45 minutes boil time remaining
+  30,               Boil addition stop 3, at 30 minutes boil time remaining
+  10,               Boil addition stop 4, at 10 Minutes boil time remaining
+  65:60,            Mash step 1, 65C for 60 minutes
+  75:10,            Mash step 2, 75C for 10 minutes
+And optionally, for delayed heating, add this:
+  10:40             Heated delay of 10 minutes and 40 seconds</p>
+<p>  RecipeDetails contain the minimal information that is needed. All other values can be skipped and have default values.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>recipeDetails</td>
+                                    <td>
+                                                <code><a href="../classes/RecipeDetails.html" target="_self" >RecipeDetails</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>details to create a recipe for </p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>delayMinutes</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                        <p>delayed heating time in minutes</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>delaySeconds</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                        <p>delayed heating time in seconds</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>showWaterTreatmentAlarm</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>whether to show the water treatment alarm or not</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>showSpargeCounter</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                    <td>
+                                        <p>whether to show the sparge counter or not</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>showSpargeAlert</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>whether to show the sparge water heating alert or not</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>skipStart</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>whether to show skip start or not??</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>boilPowerMode</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>whether to use boil power mode or not??</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>strikeTempMode</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>whether to use strike temperature mode or not??</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createResetController"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createResetController
+                        </b>
+                        <a href="#createResetController"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createResetController()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="242"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:242</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to reset the controller.</p>
+<p>Command: <code>Z</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createResetRecipeInterrupted"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createResetRecipeInterrupted
+                        </b>
+                        <a href="#createResetRecipeInterrupted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createResetRecipeInterrupted()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="251"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:251</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to reset the &quot;recipe interrupted&quot; flag.</p>
+<p>Command: <code>!</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetBoilTime"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetBoilTime
+                        </b>
+                        <a href="#createSetBoilTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetBoilTime(time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="371"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:371</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to set the boil time.</p>
+<p>Command: <code>J${time},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>time</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>boil time</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetDelayedHeatFunction"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetDelayedHeatFunction
+                        </b>
+                        <a href="#createSetDelayedHeatFunction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetDelayedHeatFunction(minutes: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, seconds: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="347"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:347</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to set delayed heating.</p>
+<p>Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.</p>
+<p>Command: <code>B${minutes},${seconds},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>minutes</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>minutes to wait for delayed heating</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>seconds</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>seconds to wait for delayed heating</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetLocalBoilTemperature"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetLocalBoilTemperature
+                        </b>
+                        <a href="#createSetLocalBoilTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetLocalBoilTemperature(temperature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="360"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:360</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to set the local boil temperature.</p>
+<p>Depending on the hight, a different boil temperature might be needed.</p>
+<p>Command: <code>E${temperature},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>temperature</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the local temperature</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetNewTimer"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetNewTimer
+                        </b>
+                        <a href="#createSetNewTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetNewTimer(minutes: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="406"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:406</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to set a new timer with only minutes.</p>
+<p>Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.</p>
+<p>Command: <code>S${minutes},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>minutes</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new timer time in minutes</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetNewTimerWithSeconds"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetNewTimerWithSeconds
+                        </b>
+                        <a href="#createSetNewTimerWithSeconds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetNewTimerWithSeconds(minutes: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, seconds: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="421"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:421</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to set a new timer with minutes and seconds.</p>
+<p>Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.</p>
+<p>Command: <code>W${minutes},${seconds},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>minutes</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new timer time in minutes</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>seconds</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new timer time in seconds</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetSpargeProgress"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetSpargeProgress
+                        </b>
+                        <a href="#createSetSpargeProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetSpargeProgress(progress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="456"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:456</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn set the sparge progress when the sparge counter is shown.</p>
+<p>Command: <code>b${progress},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>progress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the sparging progress</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetTargetTemperature"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSetTargetTemperature
+                        </b>
+                        <a href="#createSetTargetTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetTargetTemperature(temperature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="432"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:432</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to set the target temperature.</p>
+<p>Command: <code>$${temperature},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>temperature</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new target temperature</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSkipToInteraction"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSkipToInteraction
+                        </b>
+                        <a href="#createSkipToInteraction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSkipToInteraction(interaction: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="467"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:467</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to skip to the given interaction.</p>
+<p>Command: <code>c${interaction},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>interaction</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>interaction number to skip to</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSkipToStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createSkipToStep
+                        </b>
+                        <a href="#createSkipToStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSkipToStep(step: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, timeEditable: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, minutesLeft: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, secondsLeft: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, skipRamp: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, disableAddGrain: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="390"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:390</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to skip to a step.</p>
+<p>Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.</p>
+<p>Command: <code>N${step},${timeEditable},${minutesLeft},${secondsLeft},${skipRamp},${disableAddGrain},</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>step to skip to</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>timeEditable</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>can the time be adjusted?</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>minutesLeft</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>minutes left on the timer</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>secondsLeft</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>seconds left on the timer</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>skipRamp</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>skip ramp to target temperature if true</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>disableAddGrain</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>do not show the add grain alert if true</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createToggleHeat"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createToggleHeat
+                        </b>
+                        <a href="#createToggleHeat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createToggleHeat()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to toggle heating.</p>
+<p>Command: <code>H</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTogglePump"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTogglePump
+                        </b>
+                        <a href="#createTogglePump"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTogglePump()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to toggle the pump.</p>
+<p>Command: <code>P</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOffBoilControlMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOffBoilControlMode
+                        </b>
+                        <a href="#createTurnOffBoilControlMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOffBoilControlMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="278"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:278</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn off the boil control.</p>
+<p>Command: <code>e0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOffHeat"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOffHeat
+                        </b>
+                        <a href="#createTurnOffHeat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOffHeat()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn off heating.</p>
+<p>Command: <code>K0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOffPump"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOffPump
+                        </b>
+                        <a href="#createTurnOffPump"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOffPump()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn off the pump.</p>
+<p>Command: <code>L0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOffSpargeAlertMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOffSpargeAlertMode
+                        </b>
+                        <a href="#createTurnOffSpargeAlertMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOffSpargeAlertMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="323"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:323</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn off the sparge alert.</p>
+<p>Command: <code>h0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOffSpargeCounterMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOffSpargeCounterMode
+                        </b>
+                        <a href="#createTurnOffSpargeCounterMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOffSpargeCounterMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="260"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:260</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn off the sparge counter.</p>
+<p>Command: <code>d0</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOnBoilControlMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOnBoilControlMode
+                        </b>
+                        <a href="#createTurnOnBoilControlMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOnBoilControlMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="287"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:287</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn on the boil control.</p>
+<p>Command: <code>e1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOnHeat"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOnHeat
+                        </b>
+                        <a href="#createTurnOnHeat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOnHeat()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn on heating.</p>
+<p>Command: <code>K1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOnPump"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOnPump
+                        </b>
+                        <a href="#createTurnOnPump"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOnPump()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn on the pump.</p>
+<p>Command: <code>L1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOnSpargeAlertMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOnSpargeAlertMode
+                        </b>
+                        <a href="#createTurnOnSpargeAlertMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOnSpargeAlertMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="332"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:332</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn on the sparge alert.</p>
+<p>Command: <code>h1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTurnOnSpargeCounterMode"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createTurnOnSpargeCounterMode
+                        </b>
+                        <a href="#createTurnOnSpargeCounterMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTurnOnSpargeCounterMode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="269"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:269</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Command to turn on the sparge counter.</p>
+<p>Command: <code>d1</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GrainFatherCommands.html" target="_self" >GrainFatherCommands</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="encode"></a>
+                    <span class="name">
+                        <b>
+                            encode
+                        </b>
+                        <a href="#encode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>encode()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="534"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:534</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The GF controller expects each line to be 19 chars long. A line is padded with spaces.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Array&lt;BufferSource&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export type MashStep &#x3D; {
+  name: string;
+  stepTime: number;
+  stepTemperature: number;
+};
+
+export type BoilStep &#x3D; {
+  name: string;
+  time: number;
+  sent: boolean;
+};
+
+export class RecipeDetails {
+  name: string;
+  mashWaterAmount: number;
+  spargeWaterAmount: number;
+  boilTime: number;
+  hopStandTime: number;
+  mashSteps: MashStep[];
+  boilSteps: BoilStep[];
+}
+
+/**
+ * Describes a command that can be sent to the controller.
+ * Contains static methods to create a specific command.
+ *
+ * Commands are sent in plain textAll and should be exactly 19 characters in length. The end is padded with spaces.
+ *
+ * A command consists out of 1 or more lines.
+ */
+export class GrainFatherCommands {
+  commands: string[];
+
+  /**
+   * Creates a new command.
+   *
+   * @param commands each argument is treated as a single line (command).
+   */
+  constructor(...commands: string[]) {
+    this.commands &#x3D; commands;
+  }
+
+  /**
+   * Command to dismiss the boil addition alert.
+   *
+   * Command: &#x60;&#x60;&#x60;A&#x60;&#x60;&#x60;
+   */
+  static createDismissBoilAdditionAlert(): GrainFatherCommands {
+    return new GrainFatherCommands(&#x27;A&#x27;);
+  }
+
+  /**
+   * Command to cancel the running timer.
+   *
+   * Command: &#x60;&#x60;&#x60;C&#x60;&#x60;&#x60;
+   */
+  static createCancelTimer() {
+    return new GrainFatherCommands(&#x27;C&#x27;);
+  }
+
+  /**
+   * Command to decrement the target temperature.
+   *
+   * Command: &#x60;&#x60;&#x60;D&#x60;&#x60;&#x60;
+   */
+  static createDecrementTargetTemperature() {
+    return new GrainFatherCommands(&#x27;D&#x27;);
+  }
+
+  /**
+   * Command to finish the session.
+   *
+   * Command: &#x60;&#x60;&#x60;F&#x60;&#x60;&#x60;
+   */
+  static createFinishSession() {
+    return new GrainFatherCommands(&#x27;F&#x27;);
+  }
+
+  /**
+   * Command to pause or resume the current timer.
+   *
+   * Command: &#x60;&#x60;&#x60;G&#x60;&#x60;&#x60;
+   */
+  static createPauseOrResumeTimer() {
+    return new GrainFatherCommands(&#x27;G&#x27;);
+  }
+
+  /**
+   * Command to toggle heating.
+   *
+   * Command: &#x60;&#x60;&#x60;H&#x60;&#x60;&#x60;
+   */
+  static createToggleHeat() {
+    return new GrainFatherCommands(&#x27;H&#x27;);
+  }
+
+  /**
+   * Command to indicate interaction is complete.
+   *
+   * Command: &#x60;&#x60;&#x60;I&#x60;&#x60;&#x60;
+   */
+  static createInteractionComplete() {
+    return new GrainFatherCommands(&#x27;I&#x27;); // IC?
+  }
+
+  /**
+   * Command to turn off heating.
+   *
+   * Command: &#x60;&#x60;&#x60;K0&#x60;&#x60;&#x60;
+   */
+  static createTurnOffHeat() {
+    return new GrainFatherCommands(&#x27;K0&#x27;);
+  }
+
+  /**
+   * Command to turn on heating.
+   *
+   * Command: &#x60;&#x60;&#x60;K1&#x60;&#x60;&#x60;
+   */
+  static createTurnOnHeat() {
+    return new GrainFatherCommands(&#x27;K1&#x27;);
+  }
+
+  /**
+   * Command to turn off the pump.
+   *
+   * Command: &#x60;&#x60;&#x60;L0&#x60;&#x60;&#x60;
+   */
+  static createTurnOffPump() {
+    return new GrainFatherCommands(&#x27;L0&#x27;);
+  }
+
+  /**
+   * Command to turn on the pump.
+   *
+   * Command: &#x60;&#x60;&#x60;L1&#x60;&#x60;&#x60;
+   */
+  static createTurnOnPump() {
+    return new GrainFatherCommands(&#x27;L1&#x27;);
+  }
+
+  /**
+   * Command to get the current boil temperature.
+   *
+   * Command: &#x60;&#x60;&#x60;M&#x60;&#x60;&#x60;
+   */
+  static createGetCurrentBoilTemperature() {
+    return new GrainFatherCommands(&#x27;M&#x27;);
+  }
+
+  /**
+   * Command to toggle the pump.
+   *
+   * Command: &#x60;&#x60;&#x60;P&#x60;&#x60;&#x60;
+   */
+  static createTogglePump() {
+    return new GrainFatherCommands(&#x27;P&#x27;);
+  }
+
+  /**
+   * Command to disconnect the manual mode.
+   *
+   * Command: &#x60;&#x60;&#x60;Q0&#x60;&#x60;&#x60;
+   */
+  static createDisconnectManualMode() {
+    return new GrainFatherCommands(&#x27;Q0&#x27;);
+  }
+
+  /**
+   * Command to disconnect and cancel.
+   *
+   * Command: &#x60;&#x60;&#x60;Q1&#x60;&#x60;&#x60;
+   */
+  static createDisconnectAndCancel() {
+    return new GrainFatherCommands(&#x27;Q1&#x27;);
+  }
+
+  /**
+   * Command to disconnect the auto mode.
+   *
+   * Command: &#x60;&#x60;&#x60;Q2&#x60;&#x60;&#x60;
+   */
+  static createDisconnectAutoMode() {
+    return new GrainFatherCommands(&#x27;Q2&#x27;);
+  }
+
+  /**
+   * Command to press the set button.
+   *
+   * Command: &#x60;&#x60;&#x60;T&#x60;&#x60;&#x60;
+   */
+  static createPressSet() {
+    return new GrainFatherCommands(&#x27;T&#x27;);
+  }
+
+  /**
+   * Command to increment the target temperature.
+   *
+   * Command: &#x60;&#x60;&#x60;U&#x60;&#x60;&#x60;
+   */
+  static createIncrementTargetTemperature() {
+    return new GrainFatherCommands(&#x27;U&#x27;);
+  }
+
+  /**
+   * Command to disable tthe sparge water alert.
+   *
+   * Command: &#x60;&#x60;&#x60;V&#x60;&#x60;&#x60;
+   */
+  static createDisableSpargeWaterAlert() {
+    return new GrainFatherCommands(&#x27;V&#x27;);
+  }
+
+  /**
+   * Command to get the firmware version.
+   *
+   * Command: &#x60;&#x60;&#x60;X&#x60;&#x60;&#x60;
+   */
+  static createGetFirmwareVersion() {
+    return new GrainFatherCommands(&#x27;X&#x27;);
+  }
+
+  /**
+   * Command to reset the controller.
+   *
+   * Command: &#x60;&#x60;&#x60;Z&#x60;&#x60;&#x60;
+   */
+  static createResetController() {
+    return new GrainFatherCommands(&#x27;Z&#x27;);
+  }
+
+  /**
+   * Command to reset the &quot;recipe interrupted&quot; flag.
+   *
+   * Command: &#x60;&#x60;&#x60;!&#x60;&#x60;&#x60;
+   */
+  static createResetRecipeInterrupted() {
+    return new GrainFatherCommands(&#x27;!&#x27;);
+  }
+
+  /**
+   * Command to turn off the sparge counter.
+   *
+   * Command: &#x60;&#x60;&#x60;d0&#x60;&#x60;&#x60;
+   */
+  static createTurnOffSpargeCounterMode() {
+    return new GrainFatherCommands(&#x27;d0&#x27;);
+  }
+
+  /**
+   * Command to turn on the sparge counter.
+   *
+   * Command: &#x60;&#x60;&#x60;d1&#x60;&#x60;&#x60;
+   */
+  static createTurnOnSpargeCounterMode() {
+    return new GrainFatherCommands(&#x27;d1&#x27;);
+  }
+
+  /**
+   * Command to turn off the boil control.
+   *
+   * Command: &#x60;&#x60;&#x60;e0&#x60;&#x60;&#x60;
+   */
+  static createTurnOffBoilControlMode() {
+    return new GrainFatherCommands(&#x27;e0&#x27;);
+  }
+
+  /**
+   * Command to turn on the boil control.
+   *
+   * Command: &#x60;&#x60;&#x60;e1&#x60;&#x60;&#x60;
+   */
+  static createTurnOnBoilControlMode() {
+    return new GrainFatherCommands(&#x27;e0&#x27;);
+  }
+
+  /**
+   * Command to exit manual power control.
+   *
+   * Command: &#x60;&#x60;&#x60;f0&#x60;&#x60;&#x60;
+   */
+  static createExitManualPowerControlMode() {
+    return new GrainFatherCommands(&#x27;f0&#x27;);
+  }
+
+  /**
+   * Command to enter manual power control.
+   *
+   * Command: &#x60;&#x60;&#x60;f1&#x60;&#x60;&#x60;
+   */
+  static createEnterManualPowerControlMode() {
+    return new GrainFatherCommands(&#x27;f1&#x27;);
+  }
+
+  /**
+   * Command to get the controller voltage and used units.
+   *
+   * Command: &#x60;&#x60;&#x60;g&#x60;&#x60;&#x60;
+   */
+  static createGetControllerVoltageAndUnits() {
+    return new GrainFatherCommands(&#x27;g&#x27;);
+  }
+
+  /**
+   * Command to turn off the sparge alert.
+   *
+   * Command: &#x60;&#x60;&#x60;h0&#x60;&#x60;&#x60;
+   */
+  static createTurnOffSpargeAlertMode() {
+    return new GrainFatherCommands(&#x27;h0&#x27;);
+  }
+
+  /**
+   * Command to turn on the sparge alert.
+   *
+   * Command: &#x60;&#x60;&#x60;h1&#x60;&#x60;&#x60;
+   */
+  static createTurnOnSpargeAlertMode() {
+    return new GrainFatherCommands(&#x27;h1&#x27;);
+  }
+
+  /**
+   * Command to set delayed heating.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.
+   *
+   * Command: &#x60;&#x60;&#x60;B${minutes},${seconds},&#x60;&#x60;&#x60;
+   *
+   * @param minutes minutes to wait for delayed heating
+   * @param seconds seconds to wait for delayed heating
+   */
+  static createSetDelayedHeatFunction(minutes: number, seconds: number) {
+    return new GrainFatherCommands(&#x60;B${++minutes},${seconds}&#x60;);
+  }
+
+  /**
+   * Command to set the local boil temperature.
+   *
+   * Depending on the hight, a different boil temperature might be needed.
+   *
+   * Command: &#x60;&#x60;&#x60;E${temperature},&#x60;&#x60;&#x60;
+   *
+   * @param temperature the local temperature
+   */
+  static createSetLocalBoilTemperature(temperature: number) {
+    return new GrainFatherCommands(&#x60;E${temperature},&#x60;);
+  }
+
+  /**
+   * Command to set the boil time.
+   *
+   * Command: &#x60;&#x60;&#x60;J${time},&#x60;&#x60;&#x60;
+   *
+   * @param time boil time
+   */
+  static createSetBoilTime(time: number) {
+    return new GrainFatherCommands(&#x60;J${time},&#x60;);
+  }
+
+  /**
+   * Command to skip to a step.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.
+   *
+   * Command: &#x60;&#x60;&#x60;N${step},${timeEditable},${minutesLeft},${secondsLeft},${skipRamp},${disableAddGrain},&#x60;&#x60;&#x60;
+   *
+   * @param step step to skip to
+   * @param timeEditable can the time be adjusted?
+   * @param minutesLeft minutes left on the timer
+   * @param secondsLeft seconds left on the timer
+   * @param skipRamp skip ramp to target temperature if true
+   * @param disableAddGrain do not show the add grain alert if true
+   */
+  static createSkipToStep(step: number, timeEditable: boolean, minutesLeft: number,
+                          secondsLeft: number, skipRamp: boolean, disableAddGrain: boolean) {
+    return new GrainFatherCommands(&#x60;N${step},${Number(timeEditable)},${++minutesLeft},
+                            ${secondsLeft},${Number(skipRamp)},${Number(disableAddGrain)},&#x60;);
+  }
+
+  /**
+   * Command to set a new timer with only minutes.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.
+   *
+   * Command: &#x60;&#x60;&#x60;S${minutes},&#x60;&#x60;&#x60;
+   *
+   * @param minutes new timer time in minutes
+   */
+  static createSetNewTimer(minutes: number) {
+    return new GrainFatherCommands(&#x60;S${++minutes},&#x60;);
+  }
+
+  /**
+   * Command to set a new timer with minutes and seconds.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.
+   *
+   * Command: &#x60;&#x60;&#x60;W${minutes},${seconds},&#x60;&#x60;&#x60;
+   *
+   * @param minutes new timer time in minutes
+   * @param seconds new timer time in seconds
+   */
+  static createSetNewTimerWithSeconds(minutes: number, seconds: number) {
+    return new GrainFatherCommands(&#x60;W${++minutes},${seconds},&#x60;);
+  }
+
+  /**
+   * Command to set the target temperature.
+   *
+   * Command: &#x60;&#x60;&#x60;$${temperature},&#x60;&#x60;&#x60;
+   *
+   * @param temperature new target temperature
+   */
+  static createSetTargetTemperature(temperature: number) {
+    return new GrainFatherCommands(&#x60;$${temperature},&#x60;);
+  }
+
+  /**
+   * Command to edit stage temperature and time.
+   *
+   * Command: &#x60;&#x60;&#x60;a${stage},${time},${temperature},&#x60;&#x60;&#x60;
+   *
+   * @param stage the stage to edit
+   * @param time new time in minutes
+   * @param temperature new temperature
+   */
+  static createEditStageTemperatureAndTime(stage: number, time: number, temperature: number) {
+    return new GrainFatherCommands(&#x60;a${stage},${time},${temperature},&#x60;);
+  }
+
+  /**
+   * Command to turn set the sparge progress when the sparge counter is shown.
+   *
+   * Command: &#x60;&#x60;&#x60;b${progress},&#x60;&#x60;&#x60;
+   *
+   * @param progress the sparging progress
+   */
+  static createSetSpargeProgress(progress: number) {
+    return new GrainFatherCommands(&#x60;b${progress},&#x60;);
+  }
+
+  /**
+   * Command to skip to the given interaction.
+   *
+   * Command: &#x60;&#x60;&#x60;c${interaction},&#x60;&#x60;&#x60;
+   *
+   * @param interaction interaction number to skip to
+   */
+  static createSkipToInteraction(interaction: number) {
+    return new GrainFatherCommands(&#x60;c${interaction},&#x60;);
+  }
+
+  /**
+   * Create the recipe command. From all of the commands, this is the most complex one, and needs more details.
+   * A recipe consists out of multiple lines and looks as:
+   *  R75,2,15.7,16.7,  75 minute boil, 2 mash steps, 15.6L mash volume, 16.7L sparge volume
+   *  0,1,1,0,0,        No water treatment alert, show sparge counter, show sparge alert, no delayed session, do not skip the start
+   *  SAISON            Recipe name that will be displayed in the top left
+   *  0,4,0,0,          No hop stand, 4 boil addition stops, no boil power mode, no strike temp mode
+   *  75,               Boil addition stop 1, at 75 minutes boil time remaining
+   *  45,               Boil addition stop 2, at 45 minutes boil time remaining
+   *  30,               Boil addition stop 3, at 30 minutes boil time remaining
+   *  10,               Boil addition stop 4, at 10 Minutes boil time remaining
+   *  65:60,            Mash step 1, 65C for 60 minutes
+   *  75:10,            Mash step 2, 75C for 10 minutes
+   * And optionally, for delayed heating, add this:
+   *  10:40             Heated delay of 10 minutes and 40 seconds
+   *
+   *  RecipeDetails contain the minimal information that is needed. All other values can be skipped and have default values.
+   *
+   * @param recipeDetails details to create a recipe for @see RecipeDetails
+   * @param delayMinutes delayed heating time in minutes
+   * @param delaySeconds delayed heating time in seconds
+   * @param showWaterTreatmentAlarm whether to show the water treatment alarm or not
+   * @param showSpargeCounter whether to show the sparge counter or not
+   * @param showSpargeAlert whether to show the sparge water heating alert or not
+   * @param skipStart  whether to show skip start or not??
+   * @param boilPowerMode whether to use boil power mode or not??
+   * @param strikeTempMode whether to use strike temperature mode or not??
+   */
+  static createRecipe(recipeDetails: RecipeDetails, delayMinutes &#x3D; 0, delaySeconds &#x3D; 0, showWaterTreatmentAlarm &#x3D; false,
+                      showSpargeCounter &#x3D; true, showSpargeAlert &#x3D; false, skipStart &#x3D; false, boilPowerMode &#x3D; false, strikeTempMode &#x3D; false) {
+    const command &#x3D; new GrainFatherCommands(&#x60;R${recipeDetails.boilTime},${recipeDetails.mashSteps.length},${recipeDetails.mashWaterAmount},${recipeDetails.spargeWaterAmount},&#x60;,
+      &#x60;${showWaterTreatmentAlarm ? &#x27;1&#x27; : &#x27;0&#x27;},${showSpargeCounter ? &#x27;1&#x27; : &#x27;0&#x27;},${showSpargeAlert ? &#x27;1&#x27; : &#x27;0&#x27;},${(delayMinutes &gt; 0 || delaySeconds &gt; 0) ? &#x27;1&#x27; : &#x27;0&#x27;},${Number(skipStart ? &#x27;1&#x27; : &#x27;0&#x27;)},&#x60;,
+      &#x60;${recipeDetails.name}&#x60;,
+      &#x60;${recipeDetails.hopStandTime},${recipeDetails.boilSteps.length},${boilPowerMode ? &#x27;1&#x27; : &#x27;0&#x27;},${strikeTempMode ? &#x27;1&#x27; : &#x27;0&#x27;}&#x60;
+    );
+
+    for (const boilAddition of recipeDetails.boilSteps) {
+      command.append(&#x60;${boilAddition.time},&#x60;);
+    }
+
+    for (const mashStep of recipeDetails.mashSteps) {
+      command.append(&#x60;${mashStep.stepTemperature}:${mashStep.stepTime},&#x60;);
+    }
+
+    if (delayMinutes &gt; 0 || delaySeconds &gt; 0) {
+      command.append(&#x60;${++(delayMinutes)},${delaySeconds},&#x60;);
+    }
+
+    return command;
+  }
+
+  /**
+   * Appends a new command to the end of the list.
+   *
+   * @param command command to add
+   */
+  append(command: string) {
+    this.commands.push(command);
+  }
+
+  /**
+   * The GF controller expects each line to be 19 chars long. A line is padded with spaces.
+   */
+  encode(): Array&lt;BufferSource&gt; {
+    const buffer &#x3D; [];
+    for (const command of this.commands) {
+      // console.log(command);
+      const line &#x3D; Uint8Array.from(command.padEnd(19, &#x27; &#x27;), x &#x3D;&gt; x.charCodeAt(0));
+      buffer.push(line);
+    }
+    return buffer;
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'GrainFatherCommands.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
