@@ -73,7 +73,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/BrewFatherHelper.html" data-type="entity-link">BrewFatherHelper</a>
                             </li>
                             <li class="link">
-                                <a href="classes/BrewSession.html" data-type="entity-link">BrewSession</a>
+                                <a href="classes/BrewSessionState.html" data-type="entity-link">BrewSessionState</a>
                             </li>
                             <li class="link">
                                 <a href="classes/CStatus.html" data-type="entity-link">CStatus</a>

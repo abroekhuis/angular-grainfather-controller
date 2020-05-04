@@ -794,6 +794,9 @@ export class GrainFatherCommands {
    *
    *  RecipeDetails contain the minimal information that is needed. All other values can be skipped and have default values.
    *
+   * Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.
+   *
    * @param recipeDetails details to create a recipe for @see RecipeDetails
    * @param delayMinutes delayed heating time in minutes
    * @param delaySeconds delayed heating time in seconds

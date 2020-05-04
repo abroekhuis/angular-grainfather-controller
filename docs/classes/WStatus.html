@@ -128,7 +128,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="333" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:333</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="411" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:411</a></div>
                             </td>
                         </tr>
 
@@ -279,7 +279,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="328" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:328</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="406" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:406</a></div>
                             </td>
                         </tr>
 
@@ -306,7 +306,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="331" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:331</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="409" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:409</a></div>
                             </td>
                         </tr>
 
@@ -333,7 +333,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="329" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:329</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="407" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:407</a></div>
                             </td>
                         </tr>
 
@@ -360,7 +360,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="332" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:332</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="410" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:410</a></div>
                             </td>
                         </tr>
 
@@ -387,7 +387,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="333" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:333</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="411" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:411</a></div>
                             </td>
                         </tr>
 
@@ -414,7 +414,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="330" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:330</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="408" class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.notifications.ts:408</a></div>
                             </td>
                         </tr>
 
@@ -445,7 +445,7 @@ import {GrainFatherCommands, RecipeDetails} from &#x27;./grainfather.commands&#x
 export class GrainFatherNotifications {
 
   @Output()
-  sessionStatus: EventEmitter&lt;BrewSession&gt; &#x3D; new EventEmitter&lt;BrewSession&gt;();
+  sessionStatus: EventEmitter&lt;BrewSessionState&gt; &#x3D; new EventEmitter&lt;BrewSessionState&gt;();
   @Output()
   controllerStatus: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
   @Output()
@@ -563,15 +563,9 @@ export class GrainFatherNotifications {
    * @param status current YStatus.
    */
   parseStatus(status: YStatus) {
-    const sessionStatus &#x3D; new BrewSession();
-
-    sessionStatus.state &#x3D; SessionState.Idle;
-    sessionStatus.brewing &#x3D; false;
-    sessionStatus.addAddition &#x3D; null;
+    const sessionStatus &#x3D; new BrewSessionState(SessionState.Idle);
 
     if (status &amp;&amp; status.autoModeStatus) {
-      sessionStatus.brewing &#x3D; true;
-
       if (this.recipeDetails) {
         const stage &#x3D; status.stageNumber;
         const interactionCode &#x3D; status.interactionCode;
@@ -627,10 +621,8 @@ export class GrainFatherNotifications {
 
             this.recipeDetails.boilSteps.forEach(step &#x3D;&gt; {
               if (this.timer.timerMinutesLeft &#x3D;&#x3D;&#x3D; step.time &amp;&amp; !step.sent) {
-                sessionStatus.addAddition &#x3D; {
-                  name: step.name,
-                  time: step.time
-                };
+                sessionStatus.addAdditionName &#x3D; step.name;
+                sessionStatus.addAdditionTime &#x3D; step.time;
                 step.sent &#x3D; true;
               }
             });
@@ -656,6 +648,11 @@ export class GrainFatherNotifications {
   }
 }
 
+/**
+ * State of a brewing session.
+ *
+ * If no session is in progress &#x27;Idle&#x27; is used. If no recipe details are set, &#x27;Unknown&#x27; is used.
+ */
 export enum SessionState {
   Idle,
   RecipeReceived,
@@ -674,47 +671,111 @@ export enum SessionState {
   Unknown
 }
 
-export class BrewSession {
-  brewing: boolean;
+/**
+ * Describes a brewing session.
+ */
+export class BrewSessionState {
   state: SessionState;
   timerMinutesLeft: number;
   timerSecondsLeft: number;
-  addAddition: {
-    name: string;
-    time: number;
-  };
+  addAdditionName: string;
+  addAdditionTime: number;
+
+  /**
+   * Creates a new brew session state.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is substracted to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to view it as 0:30, it needs to be updated.
+   *
+   * @param state current state of brewing session
+   * @param timerMinutesLeft minutes left on current timer
+   * @param timerSecondsLeft seconds left on current timer
+   * @param addAdditionName name of the addition to add
+   * @param addAdditionTime time at which the addition needs to be added
+   */
+  constructor(state: SessionState, timerMinutesLeft: number&#x3D; 0, timerSecondsLeft: number &#x3D; 0, addAdditionName: string &#x3D; &#x27;&#x27;,
+              addAdditionTime: number &#x3D; 0) {
+    this.state &#x3D; state;
+    this.timerMinutesLeft &#x3D; timerMinutesLeft;
+    this.timerSecondsLeft &#x3D; timerSecondsLeft;
+    this.addAdditionName &#x3D; addAdditionName;
+    this.addAdditionTime &#x3D; addAdditionTime;
+  }
 }
 
+/**
+ * Class containing the details of the C notification.
+ */
 export class CStatus {
   boilTemperature: number;
 
+  /**
+   * Creates a new instance of the C notification.
+   *
+   * Notification: &#x60;&#x60;&#x60;C{boilTemperature}&#x60;&#x60;&#x60;
+   *
+   * @param boilTemperature
+   */
   constructor(boilTemperature: number) {
     this.boilTemperature &#x3D; boilTemperature;
   }
 }
 
+/**
+ * Class containing the details of the F notification.
+ */
 export class FStatus {
   firmwareVersion: string;
 
+  /**
+   * Creates a new instance of the F notification.
+   *
+   * Notification: &#x60;&#x60;&#x60;F{firmwareVersion}&#x60;&#x60;&#x60;
+   *
+   * @param firmwareVersion
+   */
   constructor(firmwareVersion: string) {
     this.firmwareVersion &#x3D; firmwareVersion;
   }
 }
 
+/**
+ * Class containing the details of the I notification.
+ */
 export class IStatus {
   interactionCode: string;
 
+  /**
+   * Creates a new instance of the I notification.
+   *
+   * Notification: &#x60;&#x60;&#x60;I{interactionCode}&#x60;&#x60;&#x60;
+   *
+   * @param interactionCode
+   */
   constructor(interactionCode: string) {
     this.interactionCode &#x3D; interactionCode;
   }
 }
 
+/**
+ * Class containing the details of the T notification.
+ */
 export class TStatus {
   timerActive: boolean;
   timerMinutesLeft: number;
   timerTotalStartTime: number;
   timerSecondsLeft: number;
 
+  /**
+   * Creates a new instance of the T notification.
+   *
+   * Notification: &#x60;&#x60;&#x60;T{timerActive},{timerMinutesLeft},{timerTotalStartTime},{timerSecondsLeft}&#x60;&#x60;&#x60;
+   *
+   * @param timerActive
+   * @param timerMinutesLeft
+   * @param timerTotalStartTime
+   * @param timerSecondsLeft
+   */
   constructor(timerActive: boolean, timerMinutesLeft: number, timerTotalStartTime: number, timerSecondsLeft: number) {
     this.timerActive &#x3D; timerActive;
     this.timerMinutesLeft &#x3D; timerMinutesLeft;
@@ -723,20 +784,37 @@ export class TStatus {
   }
 }
 
+/**
+ * Describes the voltage of the controller
+ */
 export enum Voltage {
   V230 &#x3D; 0,
   V110
 }
 
+/**
+ * Describes the used units.
+ */
 export enum Units {
   Fahrenheit &#x3D; 0,
   Celsius
 }
 
+/**
+ * Class containing the details of the V notification.
+ */
 export class VStatus {
   voltage: Voltage;
   units: Units;
 
+  /**
+   * Creates a new instance of the V notification.
+   *
+   * Notification: &#x60;&#x60;&#x60;V{voltage},{units}&#x60;&#x60;&#x60;
+   *
+   * @param voltage
+   * @param units
+   */
   constructor(voltage: Voltage, units: Units) {
     this.voltage &#x3D; voltage;
     this.units &#x3D; units;

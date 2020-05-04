@@ -407,8 +407,8 @@ Contains static methods to create a specific command.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="527"
-                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:527</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="530"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:530</a></div>
                 </td>
             </tr>
 
@@ -1346,8 +1346,8 @@ Contains static methods to create a specific command.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="499"
-                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:499</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="502"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:502</a></div>
                 </td>
             </tr>
 
@@ -1369,6 +1369,8 @@ A recipe consists out of multiple lines and looks as:
 And optionally, for delayed heating, add this:
   10:40             Heated delay of 10 minutes and 40 seconds</p>
 <p>  RecipeDetails contain the minimal information that is needed. All other values can be skipped and have default values.</p>
+<p>Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.</p>
 </div>
 
                     <div class="io-description">
@@ -3043,8 +3045,8 @@ For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="534"
-                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:534</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="537"
+                            class="link-to-prism">projects/angular-grainfather-control/src/lib/grainfather.commands.ts:537</a></div>
                 </td>
             </tr>
 
@@ -3545,6 +3547,9 @@ export class GrainFatherCommands {
    *  10:40             Heated delay of 10 minutes and 40 seconds
    *
    *  RecipeDetails contain the minimal information that is needed. All other values can be skipped and have default values.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is added to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to set 1:30, 2:30 has to be sent.
    *
    * @param recipeDetails details to create a recipe for @see RecipeDetails
    * @param delayMinutes delayed heating time in minutes
