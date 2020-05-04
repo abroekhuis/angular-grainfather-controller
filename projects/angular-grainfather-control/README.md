@@ -34,8 +34,6 @@ export class RecipeDetails {
   hopStandTime: number;
   mashSteps: MashStep[];
   boilSteps: BoilStep[];
-  delayMinutes: number;
-  delaySeconds: number;
 }
 ```
 
@@ -56,6 +54,33 @@ It also sends notifications with:
    * Current step, see SessionState
    * Time left for step, for delay, mash and boil
    * If a boil addition needs to be added, this will only be one event for each addition
+   
+## Installation and usage
+
+Install as any other NPM module.
+
+```npm install angular-grainfather-control```
+
+Add it to the angular module in which it will be used.
+
+```
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    GrainfatherControlModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+
+
+# Developer information
 
 ## Build
 
@@ -73,7 +98,7 @@ Run `ng test angular-grainfather-control` to execute the unit tests via [Karma](
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## License
+# License
 
 Copyright 2020 Alexander Broekhuis
 

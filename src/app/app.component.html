@@ -63,8 +63,7 @@ limitations under the License.
     <button *ngIf="(!isConnected())" (click)="connect()">Connect</button>
     <button *ngIf="(isConnected())" (click)="disconnect()">Disconnect</button>
 
-    <div *ngIf="isConnected() && sessionDetails.brewing">
-      <p><label for="command">Custom command:</label><input id="command" #ccommand><button (click)="sendCustomCommand(ccommand.value)">Set</button></p>
+    <div *ngIf="isConnected() && sessionDetails.state !== SessionState.Idle">
       State: {{ SessionState[sessionDetails.state] }}
       <p>
         <textarea #recipedetails>{{ recipe }}</textarea>
@@ -76,8 +75,7 @@ limitations under the License.
       <p>Set timer: <input type="number" #tminutes><input #tseconds value="0"><button *ngIf="(isConnected())" (click)="setNewTimerWithSeconds(tminutes.value, tseconds.value)">Set</button></p>
       <p>Set sparge progress: <input #sprogress><button (click)="setSpargeProgress(sprogress.value)">Set</button></p>
     </div>
-    <div *ngIf="isConnected() && !sessionDetails.brewing">
-      <p>Custom command: <input #ccommand><button (click)="sendCustomCommand(ccommand.value)">Set</button></p>
+    <div *ngIf="isConnected() && sessionDetails.state === SessionState.Idle">
       <p>Local boil temperature<input [value]="cStatus ? cStatus.boilTemperature : ''" #localboiltemperature><button (click)="setLocalBoilTemperature(localboiltemperature.value)">Set</button><button (click)="getCurrentBoilTemperature()">Get</button></p>
       <p>Target temperature<input #target><button *ngIf="(isConnected())" (click)="setTargetTemperature(target.value)">Set</button></p>
       <p>

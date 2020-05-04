@@ -23,7 +23,7 @@ import {GrainFatherCommands, RecipeDetails} from './grainfather.commands';
 export class GrainFatherNotifications {
 
   @Output()
-  sessionStatus: EventEmitter<BrewSession> = new EventEmitter<BrewSession>();
+  sessionStatus: EventEmitter<BrewSessionState> = new EventEmitter<BrewSessionState>();
   @Output()
   controllerStatus: EventEmitter<any> = new EventEmitter<any>();
   @Output()
@@ -141,15 +141,9 @@ export class GrainFatherNotifications {
    * @param status current YStatus.
    */
   parseStatus(status: YStatus) {
-    const sessionStatus = new BrewSession();
-
-    sessionStatus.state = SessionState.Idle;
-    sessionStatus.brewing = false;
-    sessionStatus.addAddition = null;
+    const sessionStatus = new BrewSessionState(SessionState.Idle);
 
     if (status && status.autoModeStatus) {
-      sessionStatus.brewing = true;
-
       if (this.recipeDetails) {
         const stage = status.stageNumber;
         const interactionCode = status.interactionCode;
@@ -205,10 +199,8 @@ export class GrainFatherNotifications {
 
             this.recipeDetails.boilSteps.forEach(step => {
               if (this.timer.timerMinutesLeft === step.time && !step.sent) {
-                sessionStatus.addAddition = {
-                  name: step.name,
-                  time: step.time
-                };
+                sessionStatus.addAdditionName = step.name;
+                sessionStatus.addAdditionTime = step.time;
                 step.sent = true;
               }
             });
@@ -234,6 +226,11 @@ export class GrainFatherNotifications {
   }
 }
 
+/**
+ * State of a brewing session.
+ *
+ * If no session is in progress 'Idle' is used. If no recipe details are set, 'Unknown' is used.
+ */
 export enum SessionState {
   Idle,
   RecipeReceived,
@@ -252,47 +249,111 @@ export enum SessionState {
   Unknown
 }
 
-export class BrewSession {
-  brewing: boolean;
+/**
+ * Describes a brewing session.
+ */
+export class BrewSessionState {
   state: SessionState;
   timerMinutesLeft: number;
   timerSecondsLeft: number;
-  addAddition: {
-    name: string;
-    time: number;
-  };
+  addAdditionName: string;
+  addAdditionTime: number;
+
+  /**
+   * Creates a new brew session state.
+   *
+   * Since the controller handles minutes as rounded up, 1 minute is substracted to have the correct number of minutes.
+   * For example, a timer with 1 minute and 30 seconds actually has 30 seconds left. So to view it as 0:30, it needs to be updated.
+   *
+   * @param state current state of brewing session
+   * @param timerMinutesLeft minutes left on current timer
+   * @param timerSecondsLeft seconds left on current timer
+   * @param addAdditionName name of the addition to add
+   * @param addAdditionTime time at which the addition needs to be added
+   */
+  constructor(state: SessionState, timerMinutesLeft: number= 0, timerSecondsLeft: number = 0, addAdditionName: string = '',
+              addAdditionTime: number = 0) {
+    this.state = state;
+    this.timerMinutesLeft = timerMinutesLeft;
+    this.timerSecondsLeft = timerSecondsLeft;
+    this.addAdditionName = addAdditionName;
+    this.addAdditionTime = addAdditionTime;
+  }
 }
 
+/**
+ * Class containing the details of the C notification.
+ */
 export class CStatus {
   boilTemperature: number;
 
+  /**
+   * Creates a new instance of the C notification.
+   *
+   * Notification: ```C{boilTemperature}```
+   *
+   * @param boilTemperature
+   */
   constructor(boilTemperature: number) {
     this.boilTemperature = boilTemperature;
   }
 }
 
+/**
+ * Class containing the details of the F notification.
+ */
 export class FStatus {
   firmwareVersion: string;
 
+  /**
+   * Creates a new instance of the F notification.
+   *
+   * Notification: ```F{firmwareVersion}```
+   *
+   * @param firmwareVersion
+   */
   constructor(firmwareVersion: string) {
     this.firmwareVersion = firmwareVersion;
   }
 }
 
+/**
+ * Class containing the details of the I notification.
+ */
 export class IStatus {
   interactionCode: string;
 
+  /**
+   * Creates a new instance of the I notification.
+   *
+   * Notification: ```I{interactionCode}```
+   *
+   * @param interactionCode
+   */
   constructor(interactionCode: string) {
     this.interactionCode = interactionCode;
   }
 }
 
+/**
+ * Class containing the details of the T notification.
+ */
 export class TStatus {
   timerActive: boolean;
   timerMinutesLeft: number;
   timerTotalStartTime: number;
   timerSecondsLeft: number;
 
+  /**
+   * Creates a new instance of the T notification.
+   *
+   * Notification: ```T{timerActive},{timerMinutesLeft},{timerTotalStartTime},{timerSecondsLeft}```
+   *
+   * @param timerActive
+   * @param timerMinutesLeft
+   * @param timerTotalStartTime
+   * @param timerSecondsLeft
+   */
   constructor(timerActive: boolean, timerMinutesLeft: number, timerTotalStartTime: number, timerSecondsLeft: number) {
     this.timerActive = timerActive;
     this.timerMinutesLeft = timerMinutesLeft;
@@ -301,20 +362,37 @@ export class TStatus {
   }
 }
 
+/**
+ * Describes the voltage of the controller
+ */
 export enum Voltage {
   V230 = 0,
   V110
 }
 
+/**
+ * Describes the used units.
+ */
 export enum Units {
   Fahrenheit = 0,
   Celsius
 }
 
+/**
+ * Class containing the details of the V notification.
+ */
 export class VStatus {
   voltage: Voltage;
   units: Units;
 
+  /**
+   * Creates a new instance of the V notification.
+   *
+   * Notification: ```V{voltage},{units}```
+   *
+   * @param voltage
+   * @param units
+   */
   constructor(voltage: Voltage, units: Units) {
     this.voltage = voltage;
     this.units = units;

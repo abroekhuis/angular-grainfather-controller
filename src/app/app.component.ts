@@ -12,12 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 import {Component} from '@angular/core';
-import {GrainfatherControlModule} from '../../projects/angular-grainfather-control/src/lib/angular-grainfather-control.module';
 import {
-  BrewSession,
+  BrewSessionState,
   CStatus, FStatus, IStatus, TStatus, VStatus,
   WStatus, XStatus, YStatus, Voltage, Units,
-  SessionState, GrainFatherCommands
+  SessionState, ConnectionState, GrainFatherCommands, GrainfatherControlModule
 } from 'angular-grainfather-control';
 import {BrewFatherHelper} from '../../projects/angular-grainfather-control/src/lib/brewfather.helper';
 
@@ -44,12 +43,12 @@ export class AppComponent {
   xStatus: XStatus;
   yStatus: YStatus;
 
-  sessionDetails: BrewSession = {
+  sessionDetails: BrewSessionState = {
     state: SessionState.Idle,
-    brewing: false,
     timerMinutesLeft: 0,
     timerSecondsLeft: 0,
-    addAddition: null
+    addAdditionName: '',
+    addAdditionTime: 0,
   };
 
   recipe = JSON.stringify(
@@ -98,31 +97,35 @@ export class AppComponent {
   });
 
   connect() {
-    this.gfBle.connect();
-
     const self = this;
-    this.gfBle.subscribeToSessionStatus(status => {
-      self.sessionDetails = status;
-      console.log(status);
-    });
-    this.gfBle.subscribeToControllerStatus(status => {
-      if (status instanceof CStatus) {
-        self.cStatus = status;
-      } else if (status instanceof FStatus) {
-        self.fStatus = status;
-      } else if (status instanceof IStatus) {
-        self.iStatus = status;
-      } else if (status instanceof TStatus) {
-        self.tStatus = status;
-      } else if (status instanceof VStatus) {
-        self.vStatus = status;
-      } else if (status instanceof WStatus) {
-        self.wStatus = status;
-      } else if (status instanceof XStatus) {
-        self.xStatus = status;
-      } else if (status instanceof YStatus) {
-        self.yStatus = status;
-      }
+
+    this.gfBle.connect().then(_ => {
+      this.gfBle.subscribeToConnectionStatus(status => {
+        console.log(status);
+      });
+      this.gfBle.subscribeToSessionStatus(status => {
+        self.sessionDetails = status;
+        console.log(status);
+      });
+      this.gfBle.subscribeToControllerStatus(status => {
+        if (status instanceof CStatus) {
+          self.cStatus = status;
+        } else if (status instanceof FStatus) {
+          self.fStatus = status;
+        } else if (status instanceof IStatus) {
+          self.iStatus = status;
+        } else if (status instanceof TStatus) {
+          self.tStatus = status;
+        } else if (status instanceof VStatus) {
+          self.vStatus = status;
+        } else if (status instanceof WStatus) {
+          self.wStatus = status;
+        } else if (status instanceof XStatus) {
+          self.xStatus = status;
+        } else if (status instanceof YStatus) {
+          self.yStatus = status;
+        }
+      });
     });
   }
 
@@ -131,7 +134,7 @@ export class AppComponent {
   }
 
   isConnected() {
-    return this.gfBle.isConnected();
+    return this.gfBle.getConnectionState() === ConnectionState.Connected;
   }
 
   async dismissBoilAdditionAlert() {
@@ -301,23 +304,10 @@ export class AppComponent {
     await this.gfBle.sendCommand(GrainFatherCommands.createSkipToInteraction(interaction));
   }
 
-  async sendCustomCommand(command: string) {
-    await this.gfBle.sendCommand(GrainFatherCommands.createCustomCommand(command));
-  }
-
-  /**
-   * To be able to continue a lost session, some details are needed.
-   * @param brewFatherBatch batch file with the needed details
-   */
   setRecipeDetails(brewFatherBatch: string) {
     this.gfBle.setRecipeDetails(BrewFatherHelper.createRecipeDetails(brewFatherBatch));
   }
 
-  /**
-   * Sends the supplied batch as recipe to the controller.
-   *
-   * @param brewFatherBatch batch file with recipe
-   */
   async sendRecipe(brewFatherBatch: string, delayMinutes: number = 0, delaySeconds: number = 0) {
     const recipeDetails = BrewFatherHelper.createRecipeDetails(brewFatherBatch);
     const recipe = GrainFatherCommands.createRecipe(recipeDetails, delayMinutes, delaySeconds);
